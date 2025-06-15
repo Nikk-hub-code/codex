@@ -21,5 +21,7 @@ while chances < 6:
         else:
             print("Oops!! You got it wrong.")
         chances += 1
+        if chances == 5:
+            print("You are out of move.")
     else:
         print("Invalid Number....")
