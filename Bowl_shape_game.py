@@ -15,7 +15,6 @@ class BowlShapeGame:
         columnCount = len(workspaceCoordinates[0])
         CoordinatesArr = []
         for i in range(rowCount):
-            maximum = []
             for j in range(columnCount):
                 if i == 0 or i == columnCount-1:
                     if workspaceCoordinates[j][i] == 'P':
@@ -24,12 +23,13 @@ class BowlShapeGame:
                     if j == columnCount-1:
                         if workspaceCoordinates[j][i] == 'P':
                             CoordinatesArr.append((j,i))
-
-
-        print(CoordinatesArr)
+        return CoordinatesArr
 
     def calPerimeter(self,coordinates):
-        pass
+        perimeter = 0
+        for i in range(len(coordinates)-1):
+            perimeter += math.dist(coordinates[i], coordinates[(i+1)])
+        return perimeter
 
     def run(self):
         matrixRow = int(input("Enter the no.of rows= "))
